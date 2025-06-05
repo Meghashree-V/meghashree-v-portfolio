@@ -64,12 +64,12 @@ export const Experience = () => {
               <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full shadow-[0_0_10px_rgba(147,51,234,0.7)]"></div>
               
               {/* Content */}
-              <div className="ml-16 bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-purple-500 hover:shadow-[0_0_25px_rgba(147,51,234,0.3)] transition-all duration-500 group">
+              <div className="ml-16 bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-purple-500 hover:shadow-[0_0_25px_rgba(147,51,234,0.3)] transition-all duration-500 group">
                 <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors mb-2">
                   {exp.title}
                 </h3>
                 <p className="text-purple-400 font-medium mb-1">{exp.organization}</p>
-                <p className="text-blue-400 text-sm mb-3">{exp.duration}</p>
+                <p className="text-gray-400 text-sm mb-3">{exp.duration}</p>
                 <p className="text-gray-300">{exp.description}</p>
               </div>
             </div>

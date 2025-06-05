@@ -31,7 +31,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto">
+    <section id="contact" className="py-20 px-6 max-w-6xl mx-auto">
       <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
         Let's Connect
       </h2>
@@ -84,7 +84,7 @@ export const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:border-purple-500 hover:shadow-[0_0_40px_rgba(147,51,234,0.3)] transition-all duration-500">
+        <div className="backdrop-blur-sm border border-gray-700 rounded-2xl p-8 md:p-12 text-center hover:border-purple-500 hover:shadow-[0_0_35px_rgba(147,51,234,0.3)] transition-all duration-500 relative overflow-hidden bg-black/60">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-purple-300 font-medium mb-2">
@@ -153,9 +153,9 @@ export const Contact = () => {
       </div>
       
       {/* Footer */}
-      <div className="text-center mt-16 pt-8 border-t border-gray-800">
+      <div className="text-center mt-16 pt-8">
         <p className="text-gray-500">
-          © 2024 Meghashree V. Built with passion and cutting-edge technology.
+          © 2025 Meghashree V. Built with passion and cutting-edge technology.
         </p>
       </div>
     </section>

@@ -63,8 +63,8 @@ export const Projects = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 max-w-7xl mx-auto">
-      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+    <section id="projects" ref={sectionRef} className="py-20 px-6 max-w-6xl mx-auto bg-transparent">
+      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
         Projects
       </h2>
       
@@ -79,7 +79,7 @@ export const Projects = () => {
             }`}
             style={{ transitionDelay: `${project.delay}ms` }}
           >
-            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm border border-gray-700 rounded-xl p-6 h-full hover:border-purple-500 hover:shadow-[0_0_30px_rgba(147,51,234,0.4)] transition-all duration-500 group hover:scale-105">
+            <div className="backdrop-blur-sm border border-gray-700 rounded-2xl p-8 md:p-12 hover:border-purple-500 hover:shadow-[0_0_35px_rgba(147,51,234,0.3)] transition-all duration-500 group bg-black/60 hover:scale-105">
               <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors mb-4">
                 {project.title}
               </h3>

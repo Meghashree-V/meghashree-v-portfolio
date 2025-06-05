@@ -9,6 +9,8 @@ import { Skills } from '@/components/Skills';
 import { Achievements } from '@/components/Achievements';
 import { Contact } from '@/components/Contact';
 import { BackToTop } from '@/components/BackToTop';
+import { CustomNavbar } from '@/components/CustomNavbar';
+import Background from '@/components/Background';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -21,21 +23,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
-      {/* Animated background particles */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.3),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.3),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_40%,rgba(147,51,234,0.2),transparent_50%)]" />
-      </div>
+      <Background />
+      <CustomNavbar />
 
       {/* Content */}
       <div className="relative z-10">
-        <Hero />
+        <section id="home"><Hero /></section>
         <About />
         <Education />
         <Experience />
-        <Projects />
-        <Skills />
+        <section id="projects"><Projects /></section>
+        <section id="skills"><Skills /></section>
         <Achievements />
         <Contact />
       </div>

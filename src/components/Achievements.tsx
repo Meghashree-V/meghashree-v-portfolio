@@ -23,13 +23,13 @@ export const Achievements = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 max-w-6xl mx-auto">
+    <section id="achievements" ref={sectionRef} className="py-20 px-6 max-w-6xl mx-auto bg-transparent">
       <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
         Achievements
       </h2>
       
       <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-        <div className="bg-gradient-to-br from-yellow-500/10 to-purple-500/10 backdrop-blur-sm border border-yellow-500/30 rounded-2xl p-8 md:p-12 text-center hover:shadow-[0_0_40px_rgba(234,179,8,0.3)] transition-all duration-500 relative overflow-hidden">
+        <div className="backdrop-blur-sm border border-yellow-500/30 rounded-2xl p-8 md:p-12 text-center hover:shadow-[0_0_40px_rgba(234,179,8,0.3)] transition-all duration-500 relative overflow-hidden bg-black/60">
           {/* Glowing background effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 via-purple-500/5 to-blue-500/5 animate-pulse" />
           
@@ -54,7 +54,7 @@ export const Achievements = () => {
           {/* Decorative elements */}
           <div className="absolute top-4 left-4 w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
           <div className="absolute top-8 right-8 w-1 h-1 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
-          <div className="absolute bottom-4 left-8 w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute bottom-4 left-8 w-1.5 h-1.5 bg-black/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
       </div>
     </section>

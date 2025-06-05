@@ -78,7 +78,7 @@ export const Skills = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 max-w-7xl mx-auto">
+    <section id="skills" ref={sectionRef} className="py-20 px-6 max-w-6xl mx-auto">
       <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
         Skills
       </h2>
@@ -94,7 +94,7 @@ export const Skills = () => {
             }`}
             style={{ transitionDelay: `${category.delay}ms` }}
           >
-            <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-purple-500 hover:shadow-[0_0_25px_rgba(147,51,234,0.3)] transition-all duration-500 group">
+            <div className="backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-purple-500 hover:shadow-[0_0_25px_rgba(147,51,234,0.3)] transition-all duration-500 group bg-black/60">
               <h3 className={`text-2xl font-bold mb-6 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
                 {category.title}
               </h3>
