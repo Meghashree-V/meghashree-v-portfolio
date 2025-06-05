@@ -24,31 +24,8 @@ export const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Advanced animated background */}
+      {/* Enhanced animated background */}
       <div className="absolute inset-0 opacity-30">
-        {/* Matrix-style falling code */}
-        <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute text-green-400 text-xs font-mono opacity-60"
-              style={{
-                left: `${Math.random() * 100}%`,
-                animationName: 'matrix-fall',
-                animationDuration: `${3 + Math.random() * 4}s`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationIterationCount: 'infinite',
-                animationTimingFunction: 'linear'
-              }}
-            >
-              {Array.from({ length: 20 }, () => Math.random() > 0.5 ? '1' : '0').join('')}
-            </div>
-          ))}
-        </div>
-        
-        {/* Tech grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(147,51,234,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(147,51,234,0.1)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse" />
-        
         {/* Floating circuit lines */}
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -75,23 +52,54 @@ export const Hero = () => {
         </svg>
       </div>
       
-      {/* Floating tech particles */}
+      {/* Tech stickers and floating elements */}
       <div className="absolute inset-0">
-        {[...Array(30)].map((_, i) => (
+        {/* Floating tech stickers */}
+        <div className="absolute top-20 left-20 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}>
+          <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-3 rounded-lg shadow-lg transform rotate-12">
+            <span className="text-white font-bold text-sm">&lt;/&gt;</span>
+          </div>
+        </div>
+        
+        <div className="absolute top-32 right-32 animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}>
+          <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-full shadow-lg">
+            <span className="text-white font-bold text-xs">{ }</span>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-40 left-40 animate-bounce" style={{ animationDelay: '2s', animationDuration: '3.5s' }}>
+          <div className="bg-gradient-to-r from-purple-600 to-pink-500 p-2 rounded-lg shadow-lg transform -rotate-12">
+            <span className="text-white font-bold text-xs">AI</span>
+          </div>
+        </div>
+        
+        <div className="absolute top-1/2 right-20 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '3.2s' }}>
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-3 rounded-lg shadow-lg transform rotate-6">
+            <span className="text-white font-bold text-xs">⚡</span>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-32 right-1/4 animate-bounce" style={{ animationDelay: '1.5s', animationDuration: '4.2s' }}>
+          <div className="bg-gradient-to-r from-green-500 to-blue-500 p-2 rounded-full shadow-lg">
+            <span className="text-white font-bold text-xs">🚀</span>
+          </div>
+        </div>
+        
+        {/* Floating particles */}
+        {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute animate-bounce"
+            className="absolute animate-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
+              animationDuration: `${3 + Math.random() * 3}s`
             }}
           >
-            {i % 4 === 0 && <div className="w-2 h-2 bg-purple-400 rounded-full opacity-70" />}
-            {i % 4 === 1 && <div className="w-1 h-1 bg-blue-400 rounded-full opacity-80" />}
-            {i % 4 === 2 && <div className="text-purple-400 text-xs opacity-60">&lt;/&gt;</div>}
-            {i % 4 === 3 && <div className="text-blue-400 text-xs opacity-60">{ }</div>}
+            {i % 3 === 0 && <div className="w-2 h-2 bg-purple-400 rounded-full opacity-70" />}
+            {i % 3 === 1 && <div className="w-1 h-1 bg-blue-400 rounded-full opacity-80" />}
+            {i % 3 === 2 && <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full opacity-60" />}
           </div>
         ))}
       </div>
@@ -113,17 +121,6 @@ export const Hero = () => {
             Meghashree V
           </span>
         </h1>
-        
-        {/* Tech-inspired subtitle */}
-        <div className={`flex justify-center mb-12 transition-all duration-1000 delay-300 ${
-          showName ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
-          <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-full px-8 py-3 backdrop-blur-sm">
-            <span className="text-purple-300 font-mono text-lg">
-              &lt; Full Stack Developer & Creative Designer /&gt;
-            </span>
-          </div>
-        </div>
         
         {/* Contact info with enhanced styling */}
         <div className={`flex flex-wrap justify-center gap-6 mb-12 text-gray-400 transition-all duration-1000 delay-500 ${
@@ -175,22 +172,18 @@ export const Hero = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes matrix-fall {
-          0% {
-            transform: translateY(-100vh);
-            opacity: 0;
+      <style>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
           }
-          10% {
-            opacity: 1;
+          50% {
+            transform: translateY(-20px);
           }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(100vh);
-            opacity: 0;
-          }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
         }
       `}</style>
     </section>

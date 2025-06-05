@@ -32,17 +32,17 @@ export const Contact = () => {
 
   return (
     <section className="py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-        Get In Touch
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        Let's Connect
       </h2>
+      
+      <p className="text-xl text-gray-300 text-center mb-16 leading-relaxed">
+        Ready to collaborate or have a project in mind? Let's connect and build something amazing together!
+      </p>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Contact Info */}
         <div className="space-y-8">
-          <p className="text-xl text-gray-300 leading-relaxed">
-            Ready to collaborate or have a project in mind? Let's connect and build something amazing together!
-          </p>
-          
           {/* Contact methods */}
           <div className="space-y-4">
             <a
