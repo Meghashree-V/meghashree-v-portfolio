@@ -55,30 +55,36 @@ export const Skills = () => {
         Skills
       </h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="space-y-8">
         {skillCategories.map((category, index) => (
           <div
             key={index}
             className={`transition-all duration-1000 ${
               isVisible 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-10'
+                ? 'opacity-100 translate-x-0' 
+                : 'opacity-0 -translate-x-10'
             }`}
             style={{ transitionDelay: `${category.delay}ms` }}
           >
-            <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-purple-500 hover:shadow-[0_0_25px_rgba(147,51,234,0.3)] transition-all duration-500 group">
-              <h3 className={`text-xl font-bold mb-4 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
+            <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-purple-500 hover:shadow-[0_0_25px_rgba(147,51,234,0.3)] transition-all duration-500 group">
+              <h3 className={`text-2xl font-bold mb-6 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
                 {category.title}
               </h3>
               
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <span
+                  <div
                     key={skillIndex}
-                    className="px-4 py-2 bg-gradient-to-r from-gray-800/80 to-gray-700/80 border border-gray-600 rounded-lg text-sm text-gray-300 hover:border-purple-500 hover:text-purple-300 hover:shadow-[0_0_10px_rgba(147,51,234,0.5)] transition-all duration-300 hover:scale-105"
+                    className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-gray-800/80 to-gray-700/80 border border-gray-600 rounded-lg hover:border-purple-500 hover:shadow-[0_0_15px_rgba(147,51,234,0.5)] transition-all duration-300 hover:scale-105 group"
                   >
-                    {skill}
-                  </span>
+                    {/* Placeholder for skill icon */}
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-xs font-bold text-white">
+                      {skill.charAt(0)}
+                    </div>
+                    <span className="text-gray-300 group-hover:text-purple-300 transition-colors font-medium">
+                      {skill}
+                    </span>
+                  </div>
                 ))}
               </div>
             </div>
