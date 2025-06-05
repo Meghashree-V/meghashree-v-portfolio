@@ -10,17 +10,31 @@ export const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [submitResult, setSubmitResult] = useState<null | 'success' | 'error'>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      setFormData({ name: '', email: '', message: '' });
-      // You would integrate with an email service here
-    }, 1000);
+    setSubmitResult(null);
+    try {
+      const response = await fetch('https://formspree.io/f/xjkrkqlb', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setSubmitResult('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitResult('error');
+      }
+    } catch (error) {
+      setSubmitResult('error');
+    }
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -86,6 +100,12 @@ export const Contact = () => {
         {/* Contact Form */}
         <div className="backdrop-blur-sm border border-gray-700 rounded-2xl p-8 md:p-12 text-center hover:border-purple-500 hover:shadow-[0_0_35px_rgba(147,51,234,0.3)] transition-all duration-500 relative overflow-hidden bg-black/60">
           <form onSubmit={handleSubmit} className="space-y-6">
+            {submitResult === 'success' && (
+              <div className="mb-4 text-green-400 font-semibold">Thank you! Your message has been sent.</div>
+            )}
+            {submitResult === 'error' && (
+              <div className="mb-4 text-red-400 font-semibold">Oops! Something went wrong. Please try again later.</div>
+            )}
             <div>
               <label htmlFor="name" className="block text-purple-300 font-medium mb-2">
                 Name
