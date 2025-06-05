@@ -44,10 +44,10 @@ export const Achievements = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Top 15 – Aventus 3.0 Hackathon
             </h3>
-            <p className="text-purple-300 font-medium mb-2">Dayananda Sagar CE</p>
+            <p className="text-purple-300 font-medium mb-2">Dayananda Sagar College of Engineering</p>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Achieved top 15 position for building Sentinel-AI, an innovative AI-driven security platform 
-              that demonstrates advanced problem-solving and technical excellence.
+              Achieved top 15 position for building Sentinel-AI, an automated penetration testing website using AI 
+              that leverages machine learning to detect vulnerabilities in other websites.
             </p>
           </div>
           

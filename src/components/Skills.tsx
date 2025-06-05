@@ -25,25 +25,48 @@ export const Skills = () => {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["C", "Java", "Python"],
+      skills: [
+        { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+        { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+        { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" }
+      ],
       color: "from-purple-500 to-purple-700",
       delay: 0
     },
     {
       title: "Web & Databases",
-      skills: ["HTML", "CSS", "JavaScript", "Firebase", "Appwrite", "MySQL", "MongoDB"],
+      skills: [
+        { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+        { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+        { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+      ],
       color: "from-blue-500 to-blue-700",
       delay: 200
     },
     {
       title: "Frameworks",
-      skills: ["React", "Next.js", "Node.js", "Spring Boot", "Solidity", "Prisma"],
+      skills: [
+        { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+        { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
+        { name: "Solidity", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" }
+      ],
       color: "from-purple-600 to-blue-600",
       delay: 400
     },
     {
       title: "Tools",
-      skills: ["Git", "GitHub", "Postman", "Figma", "Eclipse", "VS Code"],
+      skills: [
+        { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+        { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+        { name: "Postman", icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+        { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+        { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" }
+      ],
       color: "from-blue-600 to-purple-600",
       delay: 600
     }
@@ -77,12 +100,23 @@ export const Skills = () => {
                     key={skillIndex}
                     className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-gray-800/80 to-gray-700/80 border border-gray-600 rounded-lg hover:border-purple-500 hover:shadow-[0_0_15px_rgba(147,51,234,0.5)] transition-all duration-300 hover:scale-105 group"
                   >
-                    {/* Placeholder for skill icon */}
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-xs font-bold text-white">
-                      {skill.charAt(0)}
+                    <img 
+                      src={skill.icon} 
+                      alt={skill.name}
+                      className="w-6 h-6 group-hover:scale-110 transition-transform duration-300"
+                      onError={(e) => {
+                        // Fallback to initial letter if icon fails to load
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 hidden items-center justify-center text-xs font-bold text-white">
+                      {skill.name.charAt(0)}
                     </div>
                     <span className="text-gray-300 group-hover:text-purple-300 transition-colors font-medium">
-                      {skill}
+                      {skill.name}
                     </span>
                   </div>
                 ))}
