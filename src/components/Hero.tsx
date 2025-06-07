@@ -55,10 +55,7 @@ export const Hero = () => {
         <Mail size={18} className="group-hover:animate-pulse" />
         <span>vmeghashree1@gmail.com</span>
       </div>
-      <div className="flex items-center gap-2 hover:text-purple-400 transition-colors cursor-pointer group">
-        <Phone size={18} className="group-hover:animate-pulse" />
-        <span>+91 6364754673</span>
-      </div>
+
     </div>
   </div>
       <style>{`

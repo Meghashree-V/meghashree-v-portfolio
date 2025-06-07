@@ -67,13 +67,7 @@ export const Contact = () => {
               <span className="text-white text-lg">vmeghashree1@gmail.com</span>
             </a>
             
-            <a
-              href="tel:+916364754673"
-              className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-xl hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-105"
-            >
-              <Phone className="text-blue-400" size={24} />
-              <span className="text-white text-lg">+91 6364754673</span>
-            </a>
+
           </div>
           
           {/* Social links */}
