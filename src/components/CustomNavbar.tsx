@@ -17,7 +17,50 @@ export const CustomNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full flex justify-between items-center py-4 px-4 sm:py-6 sm:px-8 fixed top-0 z-50 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <nav className="w-full flex items-center py-4 px-4 sm:py-6 sm:px-8 fixed top-0 z-50 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+  {/* Mobile: Hamburger left, socials and connect right */}
+  <div className="flex w-full items-center justify-between">
+    {/* Hamburger menu for mobile */}
+    <span className="block sm:hidden mr-2">
+      <button
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        onClick={() => setMenuOpen((open) => !open)}
+        className="text-white focus:outline-none"
+      >
+        {menuOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+    </span>
+    {/* Socials and Connect on mobile */}
+    <div className="flex items-center gap-2 sm:hidden">
+      <a
+        href={SOCIALS[0].href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-full border border-white/60 text-white p-2 flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:border-purple-400 transition-colors"
+      >
+        {SOCIALS[0].icon}
+      </a>
+      <button
+        className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-5 py-2 rounded-full font-semibold text-base shadow-lg hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400"
+        onClick={() => {
+          const el = document.getElementById('contact');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+      >
+        Let's Connect
+      </button>
+      <a
+        href={SOCIALS[1].href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-full border border-white/60 text-white p-2 flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:border-purple-400 transition-colors"
+      >
+        {SOCIALS[1].icon}
+      </a>
+    </div>
+    {/* Desktop nav and socials */}
       {/* Logo or Brand (optional) */}
       <div className="flex items-center">
         <span className="block sm:hidden mr-2">
@@ -61,7 +104,7 @@ export const CustomNavbar = () => {
         </div>
       </div>
       {/* Socials and Connect button for desktop */}
-      <div className="flex flex-col sm:flex-row gap-3 items-center">
+      <div className="hidden sm:flex gap-3 items-center">
         <a
           href={SOCIALS[0].href}
           target="_blank"
